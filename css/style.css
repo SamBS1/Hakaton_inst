@@ -45,7 +45,7 @@ body{
 .ins-img{
     height: 100%;
     margin-top: 7px;
-    margin-left: 425px;
+    margin-left: 405px;
 }
 
 .search-box{
@@ -70,7 +70,7 @@ body{
 .nav-items{
     height: 22px;
     position: relative;
-    margin-right: -65px;
+    margin-right: -130px;
 }
 
 .icon{
@@ -82,9 +82,13 @@ body{
 
 .user-profile{
     width: 22px;
-    border-radius: 50%;
-    background-image: url(../img/peofile.jpg);
+    border-radius: 50% !important;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg");
     background-size: cover;
+}
+
+.dropdown-toggle::after {
+    content: none !important;
 }
 /* Navbar End */
 
