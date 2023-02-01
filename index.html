@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./CSS/hakaton.css" />
+    <!-- Css Link -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Bootstrap LinkUp -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  </head>
-  <body>
+</head>
+<body>
+
+
     <!-- Navbar Start -->
     <nav class="navbar">
         <div class="nav-wrapper">
             <img src="./img/logo.png" class="ins-img" alt="">
             <input type="text" class="search-box" placeholder="search">
             <div class="nav-items">
-                <img src="./img/home.PNG" class="icon" alt="">
+
+                <a href="#home-logo"><img src="./img/home.PNG" class="icon" alt="" id="home-logo"></a>
                 <img src="./img/messenger.PNG" class="icon" alt="">
                 <img data-bs-toggle="modal" data-bs-target="#post-add-modal" src="./img/add.png" class="icon" alt="">
                 <img src="./img/explore.PNG" class="icon" alt="">
@@ -32,6 +38,7 @@
                         <li class="nav-item" id="showUsername">
                             <a class="nav-link disabled"></a>
                         </li>
+
                 </div>
             </div>
         </div>
@@ -77,38 +84,40 @@
             <div class="left-col">
                 <div class="status-wrapper">
                     <div class="status-card">
-                        <div class="profile-pic"><img src="" alt=""></div>
-                        <p class="username">payeeelll</p>
+
+                        <div class="profile-pic"><img src="./img/status_wrapper/Tupik.jpg" alt=""></div>
+                        <p class="username">LmaoTupik</p>
                     </div>
                     <div class="status-card">
-                        <div class="profile-pic"><img src="" alt=""></div>
-                        <p class="username">naf1r_</p>
+                        <div class="profile-pic"><img src="./img/status_wrapper/Bear.jpg" alt=""></div>
+                        <p class="username">BruhBear</p>
                     </div>
                     <div class="status-card">
-                        <div class="profile-pic"><img src="" alt=""></div>
-                        <p class="username">hassan_pial</p>
+                        <div class="profile-pic"><img src="./img/status_wrapper/Indus.jpg" alt=""></div>
+                        <p class="username">SomeHindiGuy</p>
                     </div>
                     <div class="status-card">
-                        <div class="profile-pic"><img src="" alt=""></div>
-                        <p class="username">maybedristy</p>
+                        <div class="profile-pic"><img src="./img/status_wrapper/Mads.jpg" alt=""></div>
+                        <p class="username">MadsMikkelsen</p>
                     </div>
                     <div class="status-card">
-                        <div class="profile-pic"><img src="" alt=""></div>
-                        <p class="username">tanveer__ahamed</p>
+                        <div class="profile-pic"><img src="./img/status_wrapper/Hideo.jpg" alt=""></div>
+                        <p class="username">HIDEO_KOJIMA</p>
                     </div>
                     <div class="status-card">
-                        <div class="profile-pic"><img src="" alt=""></div>
-                        <p class="username">rima_akter_25</p>
+                        <div class="profile-pic"><img src="./img/status_wrapper/Reedus.jpg" alt=""></div>
+                        <p class="username">WalkingNorman</p>
                     </div>
                     <div class="status-card">
-                        <div class="profile-pic"><img src="" alt=""></div>
-                        <p class="username">ismail_hoss...</p>
+                        <div class="profile-pic"><img src="./img/status_wrapper/Billy.jpeg" alt=""></div>
+                        <p class="username">GymBossBilly</p>
                     </div>
                     <div class="status-card">
-                        <div class="profile-pic"><img src="" alt=""></div>
-                        <p class="username">oh_achah...</p>
+                        <div class="profile-pic"><img src="./img/status_wrapper/Vansama.png" alt=""></div>
+                        <p class="username">VansamaOfficial</p>
                     </div>
                 </div>
+                
                 <!-- First Post -->
                 <div class="all-post">
                     
@@ -120,62 +129,67 @@
         <div class="right-col">
             <div class="profile-card">
                 <div class="profile-pic">
-                    <img src="" alt="">
+
+                    <img src="./img/status_wrapper/Chaika.jpg" alt="">
                 </div>
                 <div>
-                    <p class="username" id="showUsername"></p>
-                    <p class="sub-text">Md Obidur Rahman (Ovi)</p>
+                    <p class="username">Lucky_Chaika</p>
+                    <p class="sub-text">+ 100 to skill</p>
                 </div>
                 <button class="action-btn">switch</button>
             </div>
             <p class="suggestion-text">Suggestions for you</p>
             <div class="profile-card">
                 <div class="profile-pic">
-                    <img src="" alt="">
+                    <img src="./img/status_wrapper/Johnny Depp.jpg" alt="">
                 </div>
                 <div>
-                    <p class="username">kaiful_islam_safin</p>
-                    <p class="sub-text">Followed by __hasnat_ali_siddique_</p>
+                    <p class="username">Johnny Depp</p>
+                    <p class="sub-text">Followed by MadsMikkelsen</p>
                 </div>
                 <button class="action-btn">follow</button>
             </div>
             <div class="profile-card">
                 <div class="profile-pic">
-                    <img src="" alt="">
+
+                    <img src="./img/status_wrapper/nigger.jpg " alt="">
                 </div>
                 <div>
-                    <p class="username">psychedelic_pulp</p>
+                    <p class="username">SomeNigger</p>
+                    <p class="sub-text">Followed by SomeHindiGuy</p>
+                </div>
+                <button class="action-btn">follow</button>
+            </div>
+            <div class="profile-card">
+                <div class="profile-pic">
+
+                    <img src="./img/status_wrapper/Rock.jpg" alt="">
+                </div>
+                <div>
+                    <p class="username">TheRock</p>
+                    <p class="sub-text">Followed by MadsMikkelsen + 2 more</p>
+                </div>
+                <button class="action-btn">follow</button>
+            </div>
+            <div class="profile-card">
+                <div class="profile-pic">
+
+                    <img src="./img/status_wrapper/Will.jpg"  alt="">
+                </div>
+                <div>
+                    <p class="username">Will Smith</p>
+                    <p class="sub-text">Followed by TheRock + 1 more</p>
+                </div>
+                <button class="action-btn">follow</button>
+            </div>
+            <div class="profile-card">
+                <div class="profile-pic">
+
+                    <img src="./img/status_wrapper/mexican.jpg" alt="">
+                </div>
+                <div>
+                    <p class="username">SomeMexican</p>
                     <p class="sub-text">New to Instagram</p>
-                </div>
-                <button class="action-btn">follow</button>
-            </div>
-            <div class="profile-card">
-                <div class="profile-pic">
-                    <img src="" alt="">
-                </div>
-                <div>
-                    <p class="username">ijaj_emon_</p>
-                    <p class="sub-text">Followed by g.s.hasan + 2 more</p>
-                </div>
-                <button class="action-btn">follow</button>
-            </div>
-            <div class="profile-card">
-                <div class="profile-pic">
-                    <img src=""  alt="">
-                </div>
-                <div>
-                    <p class="username">ku_tu_sh</p>
-                    <p class="sub-text">Followed by tasir.01 + 1 more</p>
-                </div>
-                <button class="action-btn">follow</button>
-            </div>
-            <div class="profile-card">
-                <div class="profile-pic">
-                    <img src="" alt="">
-                </div>
-                <div>
-                    <p class="username">m_r_bhuiyan726</p>
-                    <p class="sub-text">Followed by md_alauddin_nepu</p>
                 </div>
                 <button class="action-btn">follow</button>
             </div>
@@ -252,3 +266,4 @@
     <script src="./JS/hakaton.js"></script>
   </body>
 </html>
+
