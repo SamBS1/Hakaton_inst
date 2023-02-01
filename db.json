@@ -36,22 +36,12 @@
   ],
   "posts": [
     {
-      "id": 1
-    },
-    {
-      "id": 2
-    },
-    {
-      "id": 3
-    },
-    {
-      "id": 4
-    },
-    {
-      "id": 5
-    },
-    {
-      "id": 6
+      "aname": "Akyl",
+      "aphoto": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg",
+      "pcontent": "вфцфвф",
+      "pphoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu_fpPmbK-bebEeX036y7frmW06amtCkG1ew&usqp=CAU",
+      "pdate": "2023-02-10",
+      "id": "225_1675269390577"
     }
   ]
 }

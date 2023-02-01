@@ -78,7 +78,7 @@ async function register() {
 
   closeModalBtn.click();
 
-  render();
+//   render();
 }
 
 //authorization || login
@@ -166,44 +166,56 @@ logoutBtn.addEventListener("click", () => {
 });
 
 //! CRUD start
-const post_form = document.getElementById("post_add_form");
-const msg = document.querySelector(".msg");
-const all_posts = document.querySelector(".all-post");
-const edit_post = document.getElementById("edit_post");
-const comment_user = document.getElementById("comment-user");
+let post_form = document.getElementById("post_add_form");
+let msg = document.querySelector(".msg");
+let all_posts = document.querySelector(".all-post");
+let edit_post = document.getElementById("edit_post");
+let comment_user = document.getElementById("comment-user");
 
-const getLSData  = (key) => {
-
+let getLSData  = (key) => {
     if( localStorage.getItem(key) ){
         return JSON.parse(localStorage.getItem(key));
     } else {
         return false;
-    }
-
-}
+    };
+};
 
 const createLSData = (key, value) => {
 
-    // init value
     let data = [];
-
-    // check key exist or not
     if (localStorage.getItem(key)) {
         data = JSON.parse(localStorage.getItem(key));
-    }
+    };
 
-    // push data
     data.push(value);
 
     localStorage.setItem(key, JSON.stringify(data));
 }
 
-// Update LS DAta
+// Update LS Data
 const updateLSData = (key, array) => {
     localStorage.setItem(key, JSON.stringify(array));
 }
 
-post_form.onsubmit = (e) => {
+// Send post data to the JSON server
+const sendPostDataToServer = async (data) => {
+    try {
+        const response = await fetch(POSTS_API, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        const json = await response.json();
+        console.log(json);
+    } catch (error) {
+        console.error(error);
+    }
+};
+
+post_form.onsubmit = async (e) => {
     e.preventDefault();
 
     const form_data = new FormData(e.target);
@@ -211,33 +223,30 @@ post_form.onsubmit = (e) => {
     const { aname, aphoto, pcontent, pdate, pphoto } = Object.fromEntries(form_data.entries());
 
     if ( !aname || !aphoto || !pcontent || !pdate || !pphoto) {
-        msg.innerHTML = setAlert('Fields Are Required!');
-    }else {
-
+        msg.innerHTML = alert('Fields Are Required!');
+    } else {
         const id = Math.floor(Math.random() * 1000) + '_' + Date.now();
-        const dataObj = {...data, id}
+        const dataObj = {...data, id};
 
         createLSData('ins_post', dataObj);
+        await sendPostDataToServer(dataObj);
         e.target.reset();
         getAllPosts();
-    }
+    };
+};
 
-}
 
 
 const getAllPosts = () => { 
     let post = getLSData('ins_post'); 
     let list = ''; 
  
- 
- 
     if (!post) { 
-  all_posts.innerHTML = `<div class="card shadow-sm text-center mt-3"><div class="card-body">No post found</div></div>`; 
-  return false; 
- } 
+        all_posts.innerHTML = `<div class="card shadow-sm text-center mt-3"><div class="card-body">No post found</div></div>`; 
+        return false; 
+    };
  
     if (post) { 
- 
         post.reverse().map((item) => { 
             list += ` 
                  
@@ -270,13 +279,13 @@ const getAllPosts = () => {
                 </div> 
                 <p class="likes">89 likes</p> 
                 <p class="description"><span>${ item.aname }</span>${ item.pcontent }</p> 
-                <p class="post-time">${ item.pdate }</p> 
-            </div> 
-            <div class="comment-wrapper"> 
+                </div> 
+                <div class="comment-wrapper"> 
                 <img src="./img/smile.png" class="icon" alt=""> 
                 <input type="text" class="comment-box" placeholder="Add a comment"> 
                 <button class="comment-btn">Post</button> 
-            </div> 
+                </div> 
+                <p class="post-time">${ item.pdate }</p> 
         </div> 
          
                 `; 
@@ -284,7 +293,37 @@ const getAllPosts = () => {
          
     } 
     all_posts.innerHTML = list; 
- 
+
+    // function handleFormSubmit(event) {
+    //     event.preventDefault();
+      
+    //     // Process the data from the form
+      
+    //     const card = {
+    //       aname: formData.aname,
+    //       aphoto: formData.aphoto,
+    //       id: formData.id,
+    //       pcontent: formData.pcontent,
+    //       pdate: formData.pdate,
+    //       pphoto: formData.pphoto
+    //     };
+      
+    //     // Send the data to the JSON-server
+    //     fetch(POSTS_API, {
+    //       method: 'POST',
+    //       headers: {
+    //         'Content-Type': 'application/json'
+    //       },
+    //       body: JSON.stringify(card)
+    //     })
+    //       .then(response => response.json())
+    //       .then(data => console.log(data))
+    //       .catch(error => console.error(error));
+    //   }
+      
+    //   post.addEventListener('submit', handleFormSubmit);
+      
+
 } 
 getAllPosts();
 
