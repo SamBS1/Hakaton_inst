@@ -151,10 +151,13 @@ async function login() {
   loginUsernameInp.value = "";
   loginPassInp.value = "";
 
+
+};
   checkLoginLogoutStatus();
 
   closeModalBtn.click();
 }
+
 
 //logout logic
 logoutBtn.addEventListener("click", () => {

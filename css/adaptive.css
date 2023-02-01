@@ -35,7 +35,26 @@
     .left-col{
         margin-left: 0px
     }
+    .post-add-modal{
+        width: auto !important;
+    }
 
+}
+
+@media all and (max-width: 901px) {
+    .post-add-modal{
+        width: auto !important;
+    }
+    .modal-body{
+        align-items: center !important;
+        justify-content: center !important;
+        padding-right: 0%;
+        padding: 10px;
+    }
+    .fade{
+        width: 120% !important;
+        height: 120% !important;
+    }
 }
 
 @media all and (max-width: 800px) {
@@ -49,6 +68,10 @@
         left: 150px;
         margin-left: 10%;
     }
+
+    /* .modal-body{
+        width: auto;
+    } */
 
 
 }
@@ -90,6 +113,9 @@
     #showUsername{
         display: none;
     }
+    .modal-body{
+        width: auto;
+    }
 }
 
 @media all and (max-width: 501px){
@@ -100,8 +126,52 @@
         width: 350px;
     }
     .right-col{
-        right: -100px;
+        right: -30px;
         position: relative;
     }
+    .SideBarUser{
+        display: none;
+    }
+     .profile-card{ 
+        height: 80px;
+        width: 150px;
+    }
+    #SideBarUserPic{
+        width: 80px !important;
+        height: 80px !important;
+    }
+    .search-box{
+        display: none;
+    }
+    .nav-items{
+        left: 40px;
+    }
+     .modal-body{
+        width: auto;
+    }
+}
 
+@media all and (max-width: 471px){
+    .right-col{
+        display: none !important;
+    }
+    .left-col{
+        width: 500px !important;
+        margin-left: 20px;
+    }
+}
+
+@media all and (max-width: 371px){
+    .left-col{
+        margin-left: 0px;
+    }
+}
+
+@media all and (max-width: 320px){
+    .nav-items{
+        left: 55px;
+    }
+    .ins-img{
+        margin-left: 40px;
+    }
 }

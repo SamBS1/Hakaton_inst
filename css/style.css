@@ -103,6 +103,10 @@ span {
     width: 35px;
     border-radius: 10px;
 }
+/* .dropdown-menu{
+    background-color: #fff !important;
+    color: #000 !;
+} */
 /* Navbar End */
 
 /* Story Section Start */
@@ -384,14 +388,14 @@ span {
 
 
 
-@media (max-width: 500px){
+/* @media (max-width: 500px){
     .nav-items .icon{
         margin: 0 5px;
     }
     .post-image{
-        height: 300px;
+        height: 100%;
     }
-} */
+} */ */
 /* Sidebar Section End
 
 
@@ -413,3 +417,9 @@ span {
     color: #000;
 }
 /* Edit/Delete End */
+
+
+/* modals */
+#edit-modal{
+    border-radius: 10px !important;
+}
