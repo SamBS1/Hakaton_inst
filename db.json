@@ -4,6 +4,26 @@
       "username": "Akyl",
       "password": "pass123",
       "id": 1
+    },
+    {
+      "username": "Jack",
+      "password": "pass124",
+      "id": 2
+    },
+    {
+      "username": "Zamir",
+      "password": "pass123",
+      "id": 3
+    },
+    {
+      "username": "Samat",
+      "password": "pass123",
+      "id": 4
+    },
+    {
+      "username": "Urmat",
+      "password": "pass112",
+      "id": 5
     }
   ],
   "posts": []

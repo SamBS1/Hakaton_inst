@@ -14,19 +14,62 @@
     <!-- Navbar Start -->
     <nav class="navbar">
         <div class="nav-wrapper">
-            <img src="assets/img/logo.PNG" class="ins-img" alt="">
+            <img src="./img/logo.png" class="ins-img" alt="">
             <input type="text" class="search-box" placeholder="search">
             <div class="nav-items">
-                <img src="assets/img/home.PNG" class="icon" alt="">
-                <img src="assets/img/messenger.PNG" class="icon" alt="">
-                <img data-bs-toggle="modal" data-bs-target="#post-add-modal" src="assets/img/add.PNG" class="icon" alt="">
-                <img src="assets/img/explore.PNG" class="icon" alt="">
-                <img src="assets/img/like.PNG" class="icon" alt="">
-                <div class="icon user-profile"></div>
+                <img src="./img/home.PNG" class="icon" alt="">
+                <img src="./img/messenger.PNG" class="icon" alt="">
+                <img data-bs-toggle="modal" data-bs-target="#post-add-modal" src="./img/add.png" class="icon" alt="">
+                <img src="./img/explore.PNG" class="icon" alt="">
+                <img src="./img/like.PNG" class="icon" alt="">
+                <div class="icon user-profile dropdown btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <!-- </button> -->
+                        <ul class="dropdown-menu dropdown-menu-dark ">
+                          <li><a class="dropdown-item active" href="#" id="registerModalBtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Register</a></li>
+                          <li><a class="dropdown-item" href="#" id="loginModalBtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Login</a></li>
+                          <li><a class="dropdown-item" href="#" id="logoutBtn">Logout</a></li>
+                        </ul>
+                        <li class="nav-item" id="showUsername">
+                            <a class="nav-link disabled"></a>
+                        </li>
+                </div>
             </div>
         </div>
     </nav>
     <!-- Navbar End -->
+
+    <!--! Modal login register start -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Account</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="closeBtn"></button>
+            </div>
+            <div class="modal-body">
+                <!-- for register -->
+                <div class="d-flex flex-column w-100 align-items-center" id="registerUser-block">
+                    <h2>Register user</h2>
+                    <input type="text" id="reg-username" placeholder="Username" class="mb-2 w-100 form-control">
+                    <input type="text" id="reg-password" placeholder="Password" class="mb-2 w-100 form-control">
+                    <input type="text" id="reg-passwordConfirm" placeholder="Password Confirmation" class="mb-2 w-100 form-control">
+                </div>
+
+                <!-- for login -->
+                <div class="d-flex flex-column w-100 align-items-center" id="loginUser-block">
+                    <h2>Login user</h2>
+                    <input type="text" id="login-username" placeholder="Username" class="mb-2 w-100 form-control">
+                    <input type="text" id="login-password" placeholder="Password" class="mb-2 w-100 form-control">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-dark" id="registerBtn">Register</button>
+                <button type="button" class="btn btn-dark" id="loginBtn">Login</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!--! Modal login register end -->
 
     <!-- Story Section Start -->
     <section class="main">
@@ -34,39 +77,38 @@
             <div class="left-col">
                 <div class="status-wrapper">
                     <div class="status-card">
-                        <div class="profile-pic"><img src="assets/img/payel.jpg" alt=""></div>
+                        <div class="profile-pic"><img src="" alt=""></div>
                         <p class="username">payeeelll</p>
                     </div>
                     <div class="status-card">
-                        <div class="profile-pic"><img src="assets/img/nafir2.jpg" alt=""></div>
+                        <div class="profile-pic"><img src="" alt=""></div>
                         <p class="username">naf1r_</p>
                     </div>
                     <div class="status-card">
-                        <div class="profile-pic"><img src="assets/img/pial.jpg" alt=""></div>
+                        <div class="profile-pic"><img src="" alt=""></div>
                         <p class="username">hassan_pial</p>
                     </div>
                     <div class="status-card">
-                        <div class="profile-pic"><img src="assets/img/dristy.jpg" alt=""></div>
+                        <div class="profile-pic"><img src="" alt=""></div>
                         <p class="username">maybedristy</p>
                     </div>
                     <div class="status-card">
-                        <div class="profile-pic"><img src="assets/img/tanveer.jpg" alt=""></div>
+                        <div class="profile-pic"><img src="" alt=""></div>
                         <p class="username">tanveer__ahamed</p>
                     </div>
                     <div class="status-card">
-                        <div class="profile-pic"><img src="assets/img/rimi.jpg" alt=""></div>
+                        <div class="profile-pic"><img src="" alt=""></div>
                         <p class="username">rima_akter_25</p>
                     </div>
                     <div class="status-card">
-                        <div class="profile-pic"><img src="assets/img/nadimvai.jpg" alt=""></div>
+                        <div class="profile-pic"><img src="" alt=""></div>
                         <p class="username">ismail_hoss...</p>
                     </div>
                     <div class="status-card">
-                        <div class="profile-pic"><img src="assets/img/oh achha.jpg" alt=""></div>
+                        <div class="profile-pic"><img src="" alt=""></div>
                         <p class="username">oh_achah...</p>
                     </div>
                 </div>
-                
                 <!-- First Post -->
                 <div class="all-post">
                     
@@ -78,10 +120,10 @@
         <div class="right-col">
             <div class="profile-card">
                 <div class="profile-pic">
-                    <img src="assets/img/peofile.jpg" alt="">
+                    <img src="" alt="">
                 </div>
                 <div>
-                    <p class="username">ovito_uzumaki</p>
+                    <p class="username" id="showUsername"></p>
                     <p class="sub-text">Md Obidur Rahman (Ovi)</p>
                 </div>
                 <button class="action-btn">switch</button>
@@ -89,7 +131,7 @@
             <p class="suggestion-text">Suggestions for you</p>
             <div class="profile-card">
                 <div class="profile-pic">
-                    <img src="assets/img/kaiful.jpg" alt="">
+                    <img src="" alt="">
                 </div>
                 <div>
                     <p class="username">kaiful_islam_safin</p>
@@ -99,7 +141,7 @@
             </div>
             <div class="profile-card">
                 <div class="profile-pic">
-                    <img src="assets/img/pulp.jpg" alt="">
+                    <img src="" alt="">
                 </div>
                 <div>
                     <p class="username">psychedelic_pulp</p>
@@ -109,7 +151,7 @@
             </div>
             <div class="profile-card">
                 <div class="profile-pic">
-                    <img src="assets/img/ijaj.jpg" alt="">
+                    <img src="" alt="">
                 </div>
                 <div>
                     <p class="username">ijaj_emon_</p>
@@ -119,7 +161,7 @@
             </div>
             <div class="profile-card">
                 <div class="profile-pic">
-                    <img src="assets/img/oh achha.jpg"  alt="">
+                    <img src=""  alt="">
                 </div>
                 <div>
                     <p class="username">ku_tu_sh</p>
@@ -129,7 +171,7 @@
             </div>
             <div class="profile-card">
                 <div class="profile-pic">
-                    <img src="assets/img/mr.jpg" alt="">
+                    <img src="" alt="">
                 </div>
                 <div>
                     <p class="username">m_r_bhuiyan726</p>

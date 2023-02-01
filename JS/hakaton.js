@@ -1,14 +1,14 @@
 const USERS_API = 'http://localhost:8000/users';
 const POSTS_API = 'http://localhost:8000/posts';
 
-let registerModalBtn = document.querySelector('');
-let loginModalBtn = document.querySelector('');
-let registerModalBlock = document.querySelector('');
-let loginModalBlock = document.querySelector('');
-let registerBtn = document.querySelector('');
-let loginBtn = document.querySelector('');
-let closeModalBtn = document.querySelector('');
-let logoutBtn = document.querySelector('');
+let registerModalBtn = document.querySelector('#registerModalBtn');
+let loginModalBtn = document.querySelector('#loginModalBtn');
+let registerModalBlock = document.querySelector('#registerUser-block');
+let loginModalBlock = document.querySelector('#loginUser-block');
+let registerBtn = document.querySelector('#registerBtn');
+let loginBtn = document.querySelector('#loginBtn');
+let closeModalBtn = document.querySelector('#closeBtn');
+let logoutBtn = document.querySelector('#logoutBtn');
 
 //hide/show modals
 registerModalBtn.addEventListener('click', () => {
@@ -120,8 +120,7 @@ function checkUserPass (user, password) {
 function setUsersToStorage(username, id, favorites) {
     localStorage.setItem('user', JSON.stringify({
         username, 
-        id,
-        favorites
+        id
     }));
 };
 
