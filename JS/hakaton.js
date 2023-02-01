@@ -159,8 +159,6 @@ async function login () {
 
     closeModalBtn.click();
 
-    render()
-
 };
 
 //logout logic 
