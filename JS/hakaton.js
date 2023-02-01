@@ -156,7 +156,6 @@ async function login() {
   checkLoginLogoutStatus();
 
   closeModalBtn.click();
-}
 
 
 //logout logic
