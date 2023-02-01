@@ -89,6 +89,10 @@ body{
 
 .dropdown-toggle::after {
     content: none !important;
+    
+}
+.dropdown-menu{
+    border-radius: 10px !important;
 }
 /* Navbar End */
 
