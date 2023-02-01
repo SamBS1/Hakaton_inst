@@ -36,27 +36,22 @@
   ],
   "posts": [
     {
-      "title": "dawdad",
-      "price": "adawdadwa",
-      "desc": "adadada",
-      "image": "adwawda",
-      "category": "asdawd",
       "id": 1
     },
     {
-      "title": "dawdadd",
-      "price": "awdwad",
-      "desc": "dawdawd",
-      "image": "dawda",
-      "category": "awdad",
       "id": 2
     },
     {
-      "name": "Akyl",
-      "title": "dawdad",
-      "desc": "dawdad",
-      "image": "dawdwad",
       "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
     }
   ]
 }
