@@ -24,6 +24,11 @@
       "username": "Urmat",
       "password": "pass112",
       "id": 5
+    },
+    {
+      "username": "Lucky_Chaika",
+      "password": "chaika",
+      "id": 6
     }
   ],
   "posts": []

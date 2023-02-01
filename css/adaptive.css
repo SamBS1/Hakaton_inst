@@ -1,0 +1,107 @@
+@media all and (max-width:1200px){
+    .ins-img{
+        margin-top: 4px;
+        margin-left: 21%;
+    }
+    .search-box{
+        margin: 6px;
+        margin-left: -1.4%;
+    }
+    .nav-items{
+        margin-right: -20%;
+        margin-bottom: 5px;
+    }
+    
+}
+
+@media all and (max-width:1108px){
+    .nav-items{
+        margin-right: -25%;
+        margin-bottom: 5px;
+    } 
+}
+
+@media all and (max-width:1100px){
+    .main {   
+        width: 100%;
+    }
+    .nav-wrapper{
+        width: 400px;
+    } 
+    .nav-items{
+        left: 400px;
+        margin-left: 10%;
+    }
+    .left-col{
+        margin-left: 0px
+    }
+
+}
+
+@media all and (max-width: 800px) {
+    .ins-img{
+        margin-left: 10px;
+    }
+    .search-box{
+        left: 250px;
+    }
+    .nav-items{
+        left: 150px;
+        margin-left: 10%;
+    }
+
+
+}
+
+@media all and (max-width: 751px){
+    .wrapper{
+        width: 95%;
+    }
+    .nav-items{
+        left: 210px;
+    }
+    .search-box{
+        left: 285px;
+    }
+    /* #home-logo{
+        width: 16px;
+        height: 16px;
+    }
+    #messenger-logo{
+        width: 20px;
+        height: 20px;
+    }
+    #add-logo{
+        width: 20px;
+        height: 20px;
+    }
+    #explore-logo{
+        width: 20px;
+        height: 20px;
+    }
+    #like-logo{
+        width: 20px;
+        height: 20px;
+    }
+    #user-pic{
+        width: 20px;
+        height: 20px;
+    } */
+    #showUsername{
+        display: none;
+    }
+}
+
+@media all and (max-width: 501px){
+    .wrapper{
+       width : 100%
+    }
+    .left-col{
+        width: 350px;
+    }
+    .right-col{
+        right: -100px;
+        position: relative;
+    }
+
+}
