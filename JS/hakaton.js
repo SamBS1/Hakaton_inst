@@ -1,14 +1,14 @@
 const USERS_API = 'http://localhost:8000/users';
 const POSTS_API = 'http://localhost:8000/posts';
 
-let registerModalBtn = document.querySelector('#register-modal');
-let loginModalBtn = document.querySelector('#login-modal');
-let registerModalBlock = document.querySelector('#register-block');
-let loginModalBlock = document.querySelector('#login-block');
-let registerBtn = document.querySelector('#register-btn');
-let loginBtn = document.querySelector('#login-btn');
-let closeModalBtn = document.querySelector('.btn-close');
-let logoutBtn = document.querySelector('#logout-btn');
+let registerModalBtn = document.querySelector('');
+let loginModalBtn = document.querySelector('');
+let registerModalBlock = document.querySelector('');
+let loginModalBlock = document.querySelector('');
+let registerBtn = document.querySelector('');
+let loginBtn = document.querySelector('');
+let closeModalBtn = document.querySelector('');
+let logoutBtn = document.querySelector('');
 
 //hide/show modals
 registerModalBtn.addEventListener('click', () => {
