@@ -162,18 +162,18 @@ async function login() {
 logoutBtn.addEventListener("click", () => {
   localStorage.removeItem("user");
   checkLoginLogoutStatus();
-  getAllPosts()
+  render()
 });
 
 //! CRUD start
-let post_form = document.getElementById("post_add_form");
+let post_form = document.querySelector("#post_add_form");
 let msg = document.querySelector(".msg");
 let all_posts = document.querySelector(".all-post");
-let edit_post = document.getElementById("edit_post");
-let comment_user = document.getElementById("comment-user");
+let edit_post = document.querySelector("#edit_post");
+let comment_user = document.querySelector("#comment-user");
 
 let getLSData  = (key) => {
-    if( localStorage.getItem(key) ){
+    if(localStorage.getItem(key) ){
         return JSON.parse(localStorage.getItem(key));
     } else {
         return false;
@@ -190,17 +190,17 @@ const createLSData = (key, value) => {
     data.push(value);
 
     localStorage.setItem(key, JSON.stringify(data));
-}
+};
 
 // Update LS Data
 const updateLSData = (key, array) => {
     localStorage.setItem(key, JSON.stringify(array));
-}
+};
 
 // Send post data to the JSON server
 const sendPostDataToServer = async (data) => {
     try {
-        const response = await fetch(POSTS_API, {
+        let res = await fetch(POSTS_API, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -208,36 +208,36 @@ const sendPostDataToServer = async (data) => {
             body: JSON.stringify(data)
         });
 
-        const json = await response.json();
+        let json = await res.json();
         console.log(json);
     } catch (error) {
         console.error(error);
-    }
+    };
 };
 
 post_form.onsubmit = async (e) => {
     e.preventDefault();
 
-    const form_data = new FormData(e.target);
-    const data = Object.fromEntries(form_data.entries());
-    const { aname, aphoto, pcontent, pdate, pphoto } = Object.fromEntries(form_data.entries());
+    let form_data = new FormData(e.target);
+    let data = Object.fromEntries(form_data.entries());
+    let { aname, aphoto, pcontent, pdate, pphoto } = Object.fromEntries(form_data.entries());
 
     if ( !aname || !aphoto || !pcontent || !pdate || !pphoto) {
         msg.innerHTML = alert('Fields Are Required!');
     } else {
-        const id = Math.floor(Math.random() * 1000) + '_' + Date.now();
-        const dataObj = {...data, id};
+        let id = Math.floor(Math.random() * 1000) + '_' + Date.now();
+        let dataObj = {...data, id};
 
         createLSData('ins_post', dataObj);
         await sendPostDataToServer(dataObj);
         e.target.reset();
-        getAllPosts();
+        render();
     };
 };
 
 
 
-const getAllPosts = () => { 
+let render = () => { 
     let post = getLSData('ins_post'); 
     let list = ''; 
  
@@ -250,7 +250,7 @@ const getAllPosts = () => {
         post.reverse().map((item) => { 
             list += ` 
                  
-            <div class="post"> 
+        <div class="post"> 
             <div class="info"> 
                 <div class="user"> 
                     <div class="profile-pic"> 
@@ -267,7 +267,7 @@ const getAllPosts = () => {
                       <li><a data-bs-toggle="modal" editLsData="${item.id}" data-bs-target="#edit-modal" class="dropdown-item post_edit" href="#">Edit</a></li> 
                       <li><a class="dropdown-item post_delete" deleteLsData="${item.id}" href="#">Delete</a></li> 
                     </ul> 
-                  </div> 
+                </div> 
             </div> 
             <img src="${ item.pphoto }" class="post-image" alt=""> 
             <div class="post-content"> 
@@ -277,14 +277,14 @@ const getAllPosts = () => {
                     <img src="./img/send.png" class="icon" alt=""> 
                     <img src="./img/save.png" class="save icon" alt=""> 
                 </div> 
-                <p class="likes">89 likes</p> 
-                <p class="description"><span>${ item.aname }</span>${ item.pcontent }</p> 
-                </div> 
+                    <p class="likes">89 likes</p> 
+                    <p class="description"><span>${ item.aname }</span>${ item.pcontent }</p> 
                 <div class="comment-wrapper"> 
-                <img src="./img/smile.png" class="icon" alt=""> 
-                <input type="text" class="comment-box" placeholder="Add a comment"> 
-                <button class="comment-btn">Post</button> 
+                    <img src="./img/smile.png" class="icon" alt=""> 
+                    <input type="text" class="comment-box" placeholder="Add a comment"> 
+                    <button class="comment-btn">Post</button> 
                 </div> 
+            </div> 
                 <p class="post-time">${ item.pdate }</p> 
         </div> 
          
@@ -294,45 +294,15 @@ const getAllPosts = () => {
     } 
     all_posts.innerHTML = list; 
 
-    // function handleFormSubmit(event) {
-    //     event.preventDefault();
-      
-    //     // Process the data from the form
-      
-    //     const card = {
-    //       aname: formData.aname,
-    //       aphoto: formData.aphoto,
-    //       id: formData.id,
-    //       pcontent: formData.pcontent,
-    //       pdate: formData.pdate,
-    //       pphoto: formData.pphoto
-    //     };
-      
-    //     // Send the data to the JSON-server
-    //     fetch(POSTS_API, {
-    //       method: 'POST',
-    //       headers: {
-    //         'Content-Type': 'application/json'
-    //       },
-    //       body: JSON.stringify(card)
-    //     })
-    //       .then(response => response.json())
-    //       .then(data => console.log(data))
-    //       .catch(error => console.error(error));
-    //   }
-      
-    //   post.addEventListener('submit', handleFormSubmit);
-      
-
 } 
-getAllPosts();
+render();
 
 //! likes start
 let likes = 89;
 let currentLikeStatus = "neutral";
 
-const likeButton = document.getElementById("like-button");
-const likesElement = document.querySelector(".likes");
+let likeButton = document.querySelector("#like-button");
+let likesElement = document.querySelector(".likes");
 
 likeButton.addEventListener("click", function () {
   if (currentLikeStatus === "neutral") {
@@ -348,11 +318,42 @@ likeButton.addEventListener("click", function () {
 
 //! likes end
 
+
+//! comments logic start 
+document.querySelector(".comment-btn").addEventListener("click", function() {
+    var commentText = document.querySelector(".comment-box").value;
+    var postId = document.getElementById("post").getAttribute("data-post-id");
+  
+    // send request to the server to add the comment
+    fetch(`${POSTS_API}/${postId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        comments: [
+          ...post.comments,
+          { text: commentText }
+        ]
+      })
+    })
+    .then(res => res.json())
+    .then(post => {
+      // add the comment to the UI
+      var comment = document.createElement("div");
+      comment.classList.add("comment");
+      comment.innerHTML = "<p>" + commentText + "</p>";
+      document.getElementById("post").appendChild(comment);
+    })
+    .catch(error => console.error(error));
+  });
+//! comments logic end 
+
 all_posts.onclick = (e) => {
   if (e.target.hasAttribute("editlsdata")) {
-    const id = e.target.getAttribute("editLsData");
-    const data = getLSData("ins_post");
-    const singleData = data.find((item) => item.id == id);
+    let id = e.target.getAttribute("editLsData");
+    let data = getLSData("ins_post");
+    let singleData = data.find((item) => item.id == id);
 
     edit_post.innerHTML = `
                         <div class="my-3">
@@ -385,16 +386,15 @@ all_posts.onclick = (e) => {
   }
 
   if (e.target.hasAttribute("deleteLsData")) {
-    const id = e.target.getAttribute("deleteLsData");
+    let id = e.target.getAttribute("deleteLsData");
 
     if (confirm("Are Your Sure? You want to delete this post?") == true) {
-      const ddelete = getLSData("ins_post");
-      const index = ddelete.findIndex((item) => item.id == id);
+      let ddelete = getLSData("ins_post");
+      let index = ddelete.findIndex((item) => item.id == id);
       console.log(ddelete);
-
       ddelete.splice(index, 1);
       updateLSData("ins_post", ddelete);
-      getAllPosts();
+      render();
     }
   }
 };
@@ -402,16 +402,16 @@ all_posts.onclick = (e) => {
 edit_post.onsubmit = (e) => {
   e.preventDefault();
 
-  const form_data = new FormData(e.target);
-  const { aname, aphoto, pcontent, pdate, pphoto, id } = Object.fromEntries(
+  let form_data = new FormData(e.target);
+  let { aname, aphoto, pcontent, pdate, pphoto, id } = Object.fromEntries(
     form_data.entries()
   );
-  const post = getLSData("ins_post");
-  const index = post.findIndex((item) => item.id == id);
+  let post = getLSData("ins_post");
+  let index = post.findIndex((item) => item.id == id);
   post[index] = { aname, aphoto, pcontent, pdate, id, pphoto };
 
   updateLSData("ins_post", post);
-  getAllPosts();
+  render();
 };
 
 //! CRUD end
@@ -420,7 +420,7 @@ let searchInp = document.querySelector(".search-box");
 searchInp.addEventListener("input", () => {
   search = searchInp.value;
   console.log(search);
-  getAllPosts();
+  render();
 });
 //* search logic end
 
